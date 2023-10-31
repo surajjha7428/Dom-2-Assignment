@@ -1,3 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Masai School</h1>
+    <button onClick="changeRed()">Change Text color to red</button>
+    <button onClick="changeYellow()">Change Text color to yellow</button>
+  </body>
+</html>
+<script>
+let text=document.querySelector("h1")
+  function changeRed(){
+    // change text color of h1 to red
+    text.style.color="red"
+  }
+let change=document.querySelector("h1")
+  function changeYellow(){
+    change.style.color="yellow"
+    // change text color of h1 to yellow
+  }
+</script>
+3:38
+selectors.html (edited) 
+3:39
 <html>
   <head>
     <title>Practise Selectors</title>
@@ -50,10 +79,10 @@
           }
         // all the elements with the class green should change to green
       }
-      let red=document.querySelectorAll(".red")
+      let re=document.querySelectorAll(".red")
       function changeRed() {
           for(let i=0; i<re.length; i++){
-              red[i].style.color="red"
+              re[i].style.color="red"
           }
         // all the elements with the class red should change to red
       }
