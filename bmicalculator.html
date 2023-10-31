@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border:0px solid black;
+            text-align:center;
+            width:40%;
+            margin:auto;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+        #btn{
+            width:100%;
+            margin-top:1%;
+        }
+        input{
+            width:90%;
+            padding:2%;
+        }
+        button{
+            width: 100%;
+            padding: 2%;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>BMI CALCULATOR</h1>
+        <p>Enter Weight in KGs</p>
+        <input type="number" id="weight" placeholder="Enter Weight">
+        <p>Enter Height in Meters </p>
+        <input type="number" id="height" placeholder="Enter Height">
+        <div id="btn">
+            <button id="btn">Calculate BMI</button>
+        </div>
+        <h3>Your BMI: <span id="display"></span></h3>
+        <h3>You are <span id="category"></span></h3>
+    </div>
+</body>
+</html>
+<script>
+    let disp=document.getElementById("display")
+    let categ=document.getElementById("category")
+    let weight=document.getElementById("weight")
+    let height=document.getElementById("height")
+    let button=document.getElementById("btn")
+    button.addEventListener("click",function()
+    {
+        let weightValue = (weight.value);
+        let heightValue = (height.value);
+        if (weightValue=="" ||  heightValue=="") {
+            alert("Please enter weight and height");
+            return;
+        }
+        if(heightValue<=0||weightValue<=0){
+            alert("Please enter valid weight and height")
+        }
+        let BMI= weightValue / (heightValue * heightValue)
+        disp.innerText = BMI.toFixed(2);
+        if (BMI <= 18.4) {
+                categ.innerText = "Underweight";
+            } else if (BMI >= 18.5 && BMI <= 24.9) {
+                categ.innerText = "Normal Weight";
+            } else if (BMI >= 25 && BMI <= 29.9) {
+                categ.innerText = "Overweight";
+            } else if(BMI >=30){
+                categ.innerText = "Obese";
+            }
+    })
+</script>
